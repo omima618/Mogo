@@ -209,6 +209,9 @@ header {
         &:hover {
             opacity: 0.9 !important;
         }
+        i {
+            font-size: 30px;
+        }
     }
 }
 // H A P P Y     C L I E N T S    S E C T I O N    S T Y L E
@@ -328,10 +331,12 @@ footer {
     }
     i {
         color: $sec-color;
+        font-size: 20px;
     }
     input {
         width: 60%;
         color: #838383;
+        padding: 8px 20px;
         &::placeholder {
             color: #838383;
             margin-left: 10px;

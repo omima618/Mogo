@@ -239,6 +239,9 @@ header::after {
 .gallery .gallery-overlay:hover {
   opacity: 0.9 !important;
 }
+.gallery .gallery-overlay i {
+  font-size: 30px;
+}
 
 .happy-clients {
   background-image: url(../images/happy-client/bg-happy-client.jpg);
@@ -362,10 +365,12 @@ footer figure {
 }
 footer i {
   color: #95e1d3;
+  font-size: 20px;
 }
 footer input {
   width: 60%;
   color: #838383;
+  padding: 8px 20px;
 }
 footer input::-webkit-input-placeholder {
   color: #838383;
