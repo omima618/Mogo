@@ -1,0 +1,56 @@
+.what-we-do {
+    .special-heading {
+        &::before {
+            content: 'Service';
+        }
+    }
+    .img-wrapper {
+        width: 48%;
+        height: 370px;
+        @include breakpoints(mobile) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: 100%;
+        }
+    }
+    .accordion {
+        border: none !important;
+        width: 48%;
+        height: 370px;
+        overflow: hidden;
+        @include breakpoints(mobile) {
+            width: 100%;
+            height: fit-content;
+        }
+        .accordion-button {
+            i {
+                font-size: 25px;
+                color: $sec-color;
+            }
+            &:focus {
+                box-shadow: none !important;
+                color: unset;
+                background-color: transparent;
+                border-bottom: 1px solid #dee2e6;
+            }
+        }
+        .accordion-body {
+            height: 160px;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background: $sec-bg;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $sec-color;
+                border-radius: 10px;
+            }
+        }
+    }
+}

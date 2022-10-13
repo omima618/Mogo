@@ -1,0 +1,366 @@
+// H E A D E R    S T Y L E
+header {
+    background-image: url(../images/bg-header.jpg);
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, #f38181e6, #fce38ae6);
+    }
+}
+// A B O U T    S E C T I O N    S T Y L E
+.about,
+.team {
+    .special-heading {
+        &::before {
+            content: 'What we do';
+        }
+    }
+    .special-heading + p {
+        font-size: 13px;
+        width: 70%;
+        @include breakpoints(small) {
+            width: 80%;
+        }
+        @include breakpoints(mobile) {
+            width: 100%;
+        }
+    }
+    .layer {
+        transition: 0.3s linear;
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 99.9%;
+            height: 100%;
+            background-color: $sec-color;
+            bottom: 0;
+            left: 0;
+            transform: translate(0, 0);
+            transition: 0.3s linear;
+        }
+        img {
+            object-fit: cover;
+        }
+        .layer-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            background: linear-gradient(to bottom, #f38181e6, #fce38ae6);
+        }
+        &:hover {
+            transform: translate(-10px, -10px);
+            &::after {
+                transform: translate(10px, 10px);
+            }
+            .layer-content {
+                display: flex !important;
+            }
+        }
+    }
+}
+// T E A M    S E C T I O N    S T Y L E
+.team {
+    .special-heading {
+        &::before {
+            content: 'Who we are';
+        }
+    }
+    .layer-content {
+        span {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            margin: 0 0.5px;
+            font-size: 20px;
+            color: $main-color;
+            background-color: $brand-color;
+            transform: scale(1);
+            transition: 0.5s;
+            &:hover {
+                background-color: $main-color;
+                color: white;
+                transform: scale(1.2);
+                z-index: 2;
+            }
+        }
+    }
+    h5 {
+        font-size: 18px;
+        & + i {
+            font-size: 13px;
+        }
+    }
+}
+// S T A T I S T I C S    S E C T I O N    S T Y L E
+.statistics {
+    background-color: $sec-color;
+    .stat-wrapper {
+        .bp-border {
+            @include breakpoints(mobile) {
+                border-left: 1px solid #ffffff59;
+            }
+        }
+        div {
+            border-right: 1px solid #ffffff59;
+            &:first-child {
+                border-left: 1px solid #ffffff59;
+            }
+        }
+        h3 {
+            font-size: 65px;
+            @include breakpoints(small) {
+                font-size: 50px;
+            }
+            @include breakpoints(mobile) {
+                font-size: 40px;
+            }
+        }
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            @include breakpoints(small) {
+                font-size: 14px;
+            }
+            @include breakpoints(mobile) {
+                font-size: 12px;
+            }
+        }
+    }
+}
+// S E R V I C E S     S E C T I O N     S T Y L E
+.services {
+    .special-heading::before {
+        content: 'We work with';
+    }
+    .text-wrapper {
+        font-weight: 300;
+        h3 {
+            font-size: 14px;
+            font-weight: inherit;
+            color: #333;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    i {
+        display: block;
+        color: $sec-color;
+        margin-top: -5px;
+    }
+}
+// U N I Q U E     D E S I G N    S E C T I O N    S T Y L E
+.unique-design {
+    margin-bottom: 100px;
+    background-image: url(../images/unique-design/bg-unique-design.jpg);
+    .special-heading::before {
+        content: 'For all devices';
+    }
+    .img-wrapper {
+        width: 75%;
+        @include breakpoints(small) {
+            width: 100% !important;
+        }
+        .design {
+            max-width: 100%;
+        }
+        .mobile-design {
+            width: 200px;
+            bottom: -10%;
+            right: 10%;
+            @include breakpoints(small) {
+                right: 0;
+            }
+            @include breakpoints(mobile) {
+                display: none;
+            }
+        }
+    }
+}
+// B R A N D    S T Y L E    S E C T I O N
+.brand {
+    background-color: $sec-bg;
+    img {
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+.gallery {
+    .special-heading {
+        &::before {
+            content: 'What we do';
+        }
+    }
+    .gallery-overlay {
+        cursor: pointer;
+        background: linear-gradient(to bottom, #f38181e6, #fce38ae6);
+        transition: 0.5s;
+        &:hover {
+            opacity: 0.9 !important;
+        }
+    }
+}
+// H A P P Y     C L I E N T S    S E C T I O N    S T Y L E
+.happy-clients {
+    background-image: url(../images/happy-client/bg-happy-client.jpg);
+    background-size: cover;
+    background-position: center;
+    h2.special-heading {
+        &::before {
+            content: 'Happy clients';
+        }
+    }
+    .img-wrapper {
+        width: 80px;
+        height: 80px;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .feedback {
+        width: 77%;
+        @include breakpoints(small) {
+            width: 85%;
+        }
+        h5 {
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        i {
+            display: block;
+            font-size: 14px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            &::after {
+                width: 50%;
+                left: 0;
+                transform: translate(0);
+                @media (max-width: 575px) {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        p {
+            opacity: 0.9;
+            font-size: 13px;
+        }
+    }
+}
+// B L O G    S E C T I O N    S T Y L E
+.blog {
+    .special-heading::before {
+        content: 'Our stories';
+    }
+    figure {
+        img {
+            width: 100%;
+        }
+        .date {
+            font-weight: bold;
+            width: 70px;
+            height: 70px;
+            font-size: 18px;
+            background-color: $sec-color;
+            left: 2%;
+            top: 35%;
+            @include breakpoints(mobile) {
+                left: 0;
+            }
+            @media (max-width: 575px) {
+                left: 18px;
+                top: 18px;
+            }
+        }
+        figcaption {
+            h3 {
+                font-weight: 500;
+                a {
+                    font-size: 15px;
+                    color: $brand2-color;
+                }
+            }
+            span {
+                font-size: 13px;
+                i {
+                    font-size: 18px;
+                    color: $sec-color;
+                }
+            }
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}
+// M A P    S E C T I O N    S T Y L E
+.map {
+    cursor: pointer;
+    background-image: url(../images/bg-map.jpg);
+    background-position: 100% 100%;
+    .special-heading,
+    i {
+        color: $main-color;
+    }
+}
+// F O O T E R    S T Y L E
+footer {
+    background-color: #f8f8f8;
+    font-size: 13px;
+    h3 {
+        font-size: 40px;
+        color: #ccc;
+    }
+    figure {
+        padding: 1px !important;
+    }
+    i {
+        color: $sec-color;
+    }
+    input {
+        width: 60%;
+        color: #838383;
+        &::placeholder {
+            color: #838383;
+            margin-left: 10px;
+        }
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+    button {
+        background-color: $sec-color;
+        padding: 8px 20px;
+        color: #fff;
+    }
+    span {
+        color: $main-color;
+    }
+    .blog {
+        .col-8 {
+            p {
+                &:first-child {
+                    cursor: pointer;
+                    color: $brand2-color;
+                    transition: 0.3s;
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

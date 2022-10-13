@@ -1,0 +1,116 @@
+%sliderText {
+    width: 60%;
+    color: #414141b7;
+    span {
+        font-size: 20px;
+        position: relative;
+        margin-left: 50px;
+        color: #414141e5;
+        font-family: 'kuashan';
+        &::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: calc(50% - 1px);
+            width: 40px;
+            height: 2px;
+            background-color: $main-color;
+        }
+    }
+    @include breakpoints(mobile) {
+        width: 80% !important;
+    }
+    @include breakpoints(mobile) {
+        width: 70% !important;
+    }
+}
+header {
+    .carousel-item {
+        margin-top: 70px;
+        z-index: 1;
+        h2 {
+            font-size: 3rem;
+            font-family: 'kuashan';
+        }
+        p {
+            font-family: $font-montserrat;
+            font-size: 6rem;
+            font-weight: 700;
+            @include breakpoints(mobile) {
+                font-size: 5rem;
+            }
+        }
+        button {
+            font-family: $font-montserrat;
+            font-size: 1rem;
+            border-radius: 0;
+        }
+    }
+    .button-wrapper {
+        position: relative;
+        width: 24%;
+        p {
+            font-size: 0.8rem;
+        }
+        span {
+            padding-right: 0.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        button {
+            height: 2px;
+            border: none;
+            position: relative;
+        }
+    }
+}
+.quotes-slider {
+    background-color: $sec-bg;
+    .carousel {
+        .carousel-item {
+            .quote-wrapper {
+                div {
+                    width: 100px;
+                    height: 100px;
+                    border: 2px solid $sec-color;
+                    @include breakpoints(mobile) {
+                        width: 60px;
+                        height: 60px;
+                    }
+                    i {
+                        font-size: 50px;
+                        color: $sec-color;
+                        @include breakpoints(mobile) {
+                            font-size: 30px;
+                        }
+                    }
+                }
+                p {
+                    @extend %sliderText;
+                }
+            }
+        }
+    }
+}
+.testimonials {
+    .carousel {
+        .carousel-item {
+            img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                @include breakpoints(small) {
+                    width: 120px !important;
+                    height: 120px !important;
+                }
+                @include breakpoints(mobile) {
+                    width: 100px !important;
+                    height: 100px !important;
+                }
+                & + p {
+                    @extend %sliderText;
+                }
+            }
+        }
+    }
+}

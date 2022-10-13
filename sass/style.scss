@@ -1,0 +1,77 @@
+@import './base/mixin', './base/var', './pages/home', './components/navbar',
+    './components/slider', './components/accordion';
+
+
+
+@include fontFamily('roboto', '../font/Roboto/Roboto-Regular.ttf');
+@include fontFamily('kuashan', '../font/kuashan/KaushanScript-Regular.ttf');
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+}
+body {
+    font-family: $font-montserrat;
+    font-weight: 400;
+}
+html {
+    @include breakpoints(small) {
+        font-size: 14px;
+    }
+    @include breakpoints(mobile) {
+        font-size: 12px;
+    }
+}
+a {
+    text-decoration: none;
+}
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+.special-heading {
+    position: relative;
+    width: fit-content;
+}
+.special-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 25%;
+    height: 2px;
+    background-color: $main-color;
+    transform: translateX(-50%);
+}
+.special-heading::before {
+    content: '';
+    font-family: 'kuashan';
+    width: 100%;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.item-border {
+    border-bottom: 1px solid #e5e5e5;
+}
+.md-item-border {
+    @include breakpoints(small) {
+        border-bottom: 1px solid #e5e5e5;
+    }
+}
+.sm-item-border {
+    @include breakpoints(mobile) {
+        border-bottom: 1px solid #e5e5e5;
+    }
+}
